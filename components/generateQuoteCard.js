@@ -1,9 +1,6 @@
 // calculte height of the svg, based on quote length
 function calculateHeight(length) {
   let lines = Math.floor(length / 88);
-
-  console.log(length, lines);
-
   let height = lines > 2 ? (lines - 2) * 21 + 130 : 130;
   return height;
 }
@@ -11,8 +8,6 @@ function calculateHeight(length) {
 export default async function generateQuoteCard(quote) {
   // dynamic height of svg
   const height = await calculateHeight(quote.text.length);
-
-  console.log(height);
 
   // quote svg card
   const card = await `
