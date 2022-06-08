@@ -34,29 +34,30 @@ export default async function handler(req, res, quote) {
       );
       res.setHeader("Content-Type", "text/plain");
       res.send(apiQuotes[randomIndex].text);
-    }
-    if (mode === "json") {
-      if (apiQuotes.length === 0) {
-        res.setHeader("Content-Type", "application/json");
-        res.send(quote404);
-      }
-      const randomIndex = await Math.floor(
-        Math.random() * Object.keys(apiQuotes).length
-      );
-      res.setHeader("Content-Type", "application/json");
-      res.send(apiQuotes[randomIndex]);
     } else {
-      if (apiQuotes.length === 0) {
-        const card = await generateQuoteCard(quote404);
+      if (mode === "json") {
+        if (apiQuotes.length === 0) {
+          res.setHeader("Content-Type", "application/json");
+          res.send(quote404);
+        }
+        const randomIndex = await Math.floor(
+          Math.random() * Object.keys(apiQuotes).length
+        );
+        res.setHeader("Content-Type", "application/json");
+        res.send(apiQuotes[randomIndex]);
+      } else {
+        if (apiQuotes.length === 0) {
+          const card = await generateQuoteCard(quote404);
+          res.setHeader("Content-Type", "image/svg+xml");
+          res.send(card);
+        }
+        const randomIndex = await Math.floor(
+          Math.random() * Object.keys(apiQuotes).length
+        );
+        const card = await generateQuoteCard(apiQuotes[randomIndex]);
         res.setHeader("Content-Type", "image/svg+xml");
         res.send(card);
       }
-      const randomIndex = await Math.floor(
-        Math.random() * Object.keys(apiQuotes).length
-      );
-      const card = await generateQuoteCard(apiQuotes[randomIndex]);
-      res.setHeader("Content-Type", "image/svg+xml");
-      res.send(card);
     }
   }
 }
