@@ -20,14 +20,14 @@ See [the contributing guide](CONTRIBUTING.md) for detailed instructions on how t
 
 #### Text Only
 
-```md
-![readme-quote](https://codinasion.vercel.app/api/readme-quote?mode=text)
+```
+https://codinasion.vercel.app/api/readme-quote?mode=text
 ```
 
 #### Json Only
 
-```md
-![readme-quote](https://codinasion.vercel.app/api/readme-quote?mode=json)
+```
+https://codinasion.vercel.app/api/readme-quote?mode=json
 ```
 
 #### Get Quote for a specific category
@@ -38,12 +38,12 @@ See [the contributing guide](CONTRIBUTING.md) for detailed instructions on how t
 
 #### Combine mode and category
 
-```md
-![readme-quote](https://codinasion.vercel.app/api/readme-quote?mode=text&category=motivation)
+```
+https://codinasion.vercel.app/api/readme-quote?mode=text&category=motivation
 ```
 
-```md
-![readme-quote](https://codinasion.vercel.app/api/readme-quote?mode=json&category=motivation)
+```
+https://codinasion.vercel.app/api/readme-quote?mode=json&category=motivation
 ```
 
 ## Development
