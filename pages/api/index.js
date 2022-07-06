@@ -1,6 +1,6 @@
-import generateQuoteCard from "../../../components/generateQuoteCard";
+import generateQuoteCard from "../../components/generateQuoteCard";
 
-import quotes from "../../../quotes.json";
+import quotes from "../../quotes.json";
 
 const quote404 = {
   text: "No quote found for the requested category",
